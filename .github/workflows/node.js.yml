@@ -47,7 +47,7 @@ jobs:
     - name: Login to ACR
       working-directory: ./codebase/rdicidr-0.1.0
       run: echo ${{secrets.ACR_PASSWORD}}|docker login acreus.azurecr.io --username ${{secrets.ACR_USERNAME}} --password-stdin
-      #pullrequest
+      
 
     - name: Push docker imahge
       working-directory: ./codebase/rdicidr-0.1.0
