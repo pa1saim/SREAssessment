@@ -26,7 +26,7 @@ jobs:
     
     - name: Run Prettier   
       working-directory: ./codebase/rdicidr-0.1.0
-      run: npm install --save-dev Prettier
+      run: npm install --save-dev prettier
 
     - name: Run Prettier2   
       working-directory: ./codebase/rdicidr-0.1.0
