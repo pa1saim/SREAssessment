@@ -1,21 +1,23 @@
 FROM node:15 as builder
 
-WORKDIR
+WORKDIR ./codebase/rdicidr-0.1.0
 
-COPY
+COPY package*.json ./
 
-RUN 
+RUN npm install
 
-COPY
+COPY . .
 
-RUN 
+RUN npm run build
 
-FROM
+FROM node:15
 
-WORKDIR
+WORKDIR /app
 
-COPY
+COPY --from=builder ./codebase/rdicidr-0.1.0 /app
 
-RUN 
+RUN npm install --only=production
 
-ENTRYPOINT 
+EXPOSE 3000
+
+ENTRYPOINT ["npm","start"]
