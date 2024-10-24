@@ -14,7 +14,7 @@ FROM node:15
 
 WORKDIR /app
 
-COPY --from+builder ./codebase/rdicidr-0.1.0 /app
+COPY --from=builder ./codebase/rdicidr-0.1.0 /app
 
 RUN npm install --only=production
 
