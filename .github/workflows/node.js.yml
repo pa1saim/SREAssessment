@@ -40,5 +40,16 @@ jobs:
       working-directory: ./codebase/rdicidr-0.1.0
       run: CI=true npm run build
 
+    - name: Build Docker Image
+      working-directory: ./codebase/rdicidr-0.1.0
+      run: docker build -t acreus.azurecr.io/my-app:v1
+
+    - name: Login to ACR
+      working-directory: ./codebase/rdicidr-0.1.0
+      run: echo ${{secrets.ACR_PASSWORD}}|docker login acreus.azurecr.io --username ${{secrets.ACR_USERNAME}} --password-stdin
       #pullrequest
+
+    - name: Push docker imahge
+      working-directory: ./codebase/rdicidr-0.1.0
+      run: docker push acreus.azurecr.io/my-app:v1
 
