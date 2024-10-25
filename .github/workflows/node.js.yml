@@ -42,7 +42,7 @@ jobs:
 
     - name: Build Docker Image
       working-directory: ./codebase/rdicidr-0.1.0
-      run: docker build -t acreus.azurecr.io/my-app:v1
+      run: docker build -t acreus.azurecr.io/my-app:v1 .
 
     - name: Login to ACR
       working-directory: ./codebase/rdicidr-0.1.0
